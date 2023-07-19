@@ -5,6 +5,7 @@
   <h3>Page loaded successfully</h3>
   <br/>
   <div class="row">
+    {% if posts %}
     {% for post in posts %}
       <div class="card" style="width: 16rem; padding:5px; margin:5px;">
         <img height="200" width="200" src="{{post.image_url}}" class="card-img-top" alt="Post Image">
@@ -18,5 +19,8 @@
         </div>
       </div>
     {% endfor %}
+    {% else %}
+      <h2 class="text-muted">No Post, Create/Write a Story</h2>
+    {% endif %}
   </div>
 {% endblock %}
